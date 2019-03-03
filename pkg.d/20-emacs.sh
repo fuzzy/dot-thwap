@@ -19,7 +19,10 @@ if test ! -x ${THWAP_HOME}/emacs-${vers}/bin/emacs-${vers}; then
     test ! -f ${tball} && wget ${url}
     tar -Jxf ${tball}
     cd emacs-${vers}
-    ./configure --prefix=${THWAP_HOME}/emacs-${vers} --with-modules --with-x-toolkit=gtk2 --with-threads
+    ./configure --prefix=${THWAP_HOME}/emacs-${vers} \
+                --with-modules \
+                --with-x-toolkit=lucid \
+                --with-threads
     ${tmake} -j$(grep rocess ${PROC_CPU} | wc -l)
     ${tmake} install && cd ../ && rm -rf emacs-${vers}*
     cd
