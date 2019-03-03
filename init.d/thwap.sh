@@ -5,6 +5,7 @@ THWAP_LIBR=${THWAP_BASE}/library
 THWAP_HOME=${THWAP_LIBR}/${THWAP_OS}/${THWAP_ARCH}
 THWAP_TEMP=${THWAP_HOME}/temp
 THWAP_PKGD=${THWAP_BASE}/pkg.d
+THWAP_CONF=${THWAP_BASE}/etc.d
 
 alias thwap_rdiff_backup="${HOME}/.thwap/scripts.d/thwap-rdiff-backup.sh"
 alias thwap_snap_backup="${HOME}/.thwap/scripts.d/thwap-snap-backup.sh"

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+THWAP_BASE_CFG=${HOME}/.thwap/init.d/thwap.sh
+test -f ${THWAP_BASE_CFG} && . ${THWAP_BASE_CFG} || (echo "No ${THWAP_BASE_CONFIG}";exit 1)
+
 CONFIG=${THWAP_CONF}/thwap-snap-backup.sh
 if test -f ${CONFIG}; then
     . ${CONFIG}
