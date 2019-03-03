@@ -30,3 +30,13 @@ export GOPATH=${THWAP_HOME}/golang/path
 
 add2path ${GOROOT}/bin
 add2path ${GOPATH}/bin
+
+for pkg in golang.org/x/tools/cmd/... \
+           github.com/rogpeppe/godef/... \
+           github.com/nsf/gocode \
+           golang.org/x/tools/cmd/goimports \
+           golang.org/x/tools/cmd/guru \
+           github.com/dougm/goflymake; do
+    go get -u ${pkg}
+done
+
