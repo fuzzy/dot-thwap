@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# Thwap backup configuration, start with the base dir
-THWAP_BKUP=/backup/${USER}/rdiff/$(hostname -s)
+CONFIG=${THWAP_CONF}/thwap-rdiff-backup.sh
+if test -f ${CONFIG}; then
+    . ${CONFIG}
+    rdiff-backup ${THWAP_RDIFF_ARGS} ${HOME}/ ${THWAP_RDIFF_DIR}/
+    rdiff-backup --remove-older-than ${THWAP_RDIFF_RETENTION} ${THWAP_RDIFF_DIR}
+else
+    echo "No configuration found at: ${CONFIG}"
+fi
 
-# then let's setup the rdiff-backup work
-THWAP_RDIFF=${THWAP_BKUP}/rdiff
-THWAP_RDIFF_ARGS="--verify -b" # --print-statistics"
-
-rdiff-backup ${THWAP_RDIFF_ARGS} ${HOME}/ ${THWAP_RDIFF}/
-rdiff-backup --remove-older-than 30D ${THWAP_RDIFF}
