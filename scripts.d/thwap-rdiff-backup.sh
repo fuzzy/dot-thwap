@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Thwap backup configuration, start with the base dir
-THWAP_BKUP=/backup/${USER}
+THWAP_BKUP=/backup/${USER}/rdiff/$(hostname -s)
 
 # then let's setup the rdiff-backup work
 THWAP_RDIFF=${THWAP_BKUP}/rdiff

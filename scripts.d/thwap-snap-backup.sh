@@ -16,6 +16,6 @@ current_snaps=$(ls ${THWAP_SNAPS}|sort|wc -l)
 del_num=$((${current_snaps} - ${THWAP_SNAPS_HISTORY}))
 if test ${current_snaps} -gt ${THWAP_SNAPS_HISTORY}; then
     cdir=$(pwd)
-    cd ${THWAP_SNAPS};ls|sort|head -n ${del_num}|xargs rm -f
+    cd ${THWAP_SNAPS};ls $(hostname -s)*|sort|head -n ${del_num}|xargs rm -f
     cd ${cdir}
 fi
