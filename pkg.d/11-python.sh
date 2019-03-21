@@ -13,6 +13,7 @@ build_py() {
         cd
         test "${pymajor}" = "3" && PIP=pip3 || PIP=pip
         reqs=${THWAP_PKGD}/py${pymajor}-requirements.txt
+        chpy ${pymajor}
         thwap_exec "Installing extra packages" "${PIP} install --upgrade -r ${reqs}"
     fi
 }
