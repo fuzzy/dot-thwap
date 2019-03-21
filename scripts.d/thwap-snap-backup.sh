@@ -7,7 +7,8 @@ CONFIG=${THWAP_CONF}/thwap-snap-backup.sh
 if test -f ${CONFIG}; then
     . ${CONFIG}
     OUTPUT=${THWAP_SNAPS}/${THWAP_SNAPS_CURRENT}
-    tar ${THWAP_SNAPS_ARGS} 2>/dev/null | ${THWAP_SNAPS_COMP} >${OUTPUT}
+    tar_cmd="tar ${THWAP_SNAPS_ARGS} 2>/dev/null | ${THWAP_SNAPS_COMP} >${OUTPUT}"
+    thwap_exec "Snapshot: \${HOME}" "${tar_cmd}"
     current_snaps=$(ls ${THWAP_SNAPS}|sort|wc -l)
     del_num=$((${current_snaps} - ${THWAP_SNAPS_HISTORY}))
     if test ${current_snaps} -gt ${THWAP_SNAPS_HISTORY}; then
