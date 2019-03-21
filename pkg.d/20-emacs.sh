@@ -3,28 +3,15 @@ tball=$(wget -q -O- http://ftp.gnu.org/gnu/emacs/|grep -E 'emacs-[0-9]+\.[0-9]+.
 vers=$(echo ${tball}|awk -F- '{print $2}'|awk -F'.ta' '{print $1}')
 url="http://ftp.gnu.org/gnu/emacs/${tball}"
 
-case "$(uname -s)" in
-    (FreeBSD)
-        tmake=$(which gmake)
-        PROC_CPU="/compat/linux/proc/cpuinfo"
-        ;;
-    (Linux)
-        tmake=$(which make)
-        PROC_CPU="/proc/cpuinfo"
-        ;;
-esac
-
 if test ! -x ${THWAP_HOME}/emacs-${vers}/bin/emacs-${vers}; then
+    tout "\033[32m>>>\033[0m PKG: \033[36mEmacs ${vers}\033[0m\n"
     cd ${THWAP_TEMP} ; rm -rf emacs-${vers}
-    test ! -f ${tball} && wget ${url}
-    tar -Jxf ${tball}
+    test ! -f ${tball} && thwap_exec "Fetching" "wget -qc ${url}"
+    thwap_exec "Extracting" "tar -Jxf ${tball}"
     cd emacs-${vers}
-    ./configure --prefix=${THWAP_HOME}/emacs-${vers} \
-                --with-modules \
-                --with-x-toolkit=lucid \
-                --with-threads
-    ${tmake} -j$(grep rocess ${PROC_CPU} | wc -l)
-    ${tmake} install && cd ../ && rm -rf emacs-${vers}*
+    thwap_exec "Configuring" "./configure --prefix=${THWAP_HOME}/emacs-${vers} --with-modules --with-x-toolkit=lucid --with-threads"
+    thwap_exec "Compiling" "${TMAKE} -j${NCPUS}"
+    thwap_exec "Installing" "${TMAKE} install" && cd ../ && rm -rf emacs-${vers}*
     cd
 fi
 

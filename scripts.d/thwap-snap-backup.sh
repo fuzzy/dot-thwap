@@ -6,7 +6,8 @@ test -f ${THWAP_BASE_CFG} && . ${THWAP_BASE_CFG} || (echo "No ${THWAP_BASE_CONFI
 CONFIG=${THWAP_CONF}/thwap-snap-backup.sh
 if test -f ${CONFIG}; then
     . ${CONFIG}
-    tar ${THWAP_SNAPS_ARGS} 2>/dev/null | ${THWAP_SNAPS_COMP} >${THWAP_SNAPS_CURRENT}
+    OUTPUT=${THWAP_SNAPS}/${THWAP_SNAPS_CURRENT}
+    tar ${THWAP_SNAPS_ARGS} 2>/dev/null | ${THWAP_SNAPS_COMP} >${OUTPUT}
     current_snaps=$(ls ${THWAP_SNAPS}|sort|wc -l)
     del_num=$((${current_snaps} - ${THWAP_SNAPS_HISTORY}))
     if test ${current_snaps} -gt ${THWAP_SNAPS_HISTORY}; then
@@ -17,5 +18,3 @@ if test -f ${CONFIG}; then
 else
     echo "No configuration found at: ${CONFIG}"
 fi
-
-
