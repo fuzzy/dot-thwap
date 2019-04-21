@@ -1,0 +1,40 @@
+local pkg = {name = "Python"}
+
+-- Here we can declare all the versions we plan on installing
+-- and any customizations for them.
+pkg.default        = "3.7.3"
+pkg.versions       = {
+   {
+      name         = "2.7.16",
+      url          = "https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tar.xz",
+      md5          = "30157d85a2c0479c09ea2cbe61f2aaf5",
+      configure    = {arguments = "--with-signal-module --with-threads --with-fpectl"},
+      provides     = "bin/python2.7"
+   },
+   {
+      name         = "3.7.3",
+      url          = "https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz",
+      md5          = "93df27aec0cd18d6d42173e601ffbbfd",
+      provides     = "bin/python3.7"
+   }
+}
+
+-- if nothing special needs to be done for patching, then this can be blank
+-- if configured, if follows the format of the versions table
+-- pkg.patches = {}
+
+-- there is no need to worry about --prefix=
+-- that is handled by the job runner. This set should be
+-- the global set of arguments that works for all versions
+-- if that's applicable.
+pkg.configure      = {
+   arguments       = "--with-ensurepip=upgrade"
+}
+
+-- if nothing special needs to be done for building, then this can be blank
+-- pkg.compile = {}
+
+-- if nothing special needs to be done for installing, then this can be blank
+-- pkg.install = {}
+
+return pkg

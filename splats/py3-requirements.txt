@@ -1,0 +1,11 @@
+pip
+bpython
+ipython
+rope
+jedi
+# flake8 for code checks
+flake8
+# and autopep8 for automatic PEP8 formatting
+autopep8
+# and yapf for code formatting
+yapf

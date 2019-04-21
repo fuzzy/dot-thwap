@@ -1,0 +1,9 @@
+pip
+setuptools
+bpython
+ipython
+rope
+jedi
+flake8
+autopep8
+yapf

@@ -1,0 +1,28 @@
+local pkg = {name = "slang"}
+
+-- Here we can declare all the versions we plan on installing
+-- and any customizations for them.
+pkg.versions       = {
+   {name           = "2.3.2",
+    url            = "http://www.jedsoft.org/releases/slang/slang-2.3.2.tar.bz2",
+    md5            = "",
+    provides       = "bin/slsh"}
+}
+
+-- if nothing special needs to be done for patching, then this can be blank
+-- if configured, if follows the format of the versions table
+-- pkg.patches = {}
+
+-- there is no need to worry about --prefix=
+-- that is handled by the job runner. This set should be
+-- the global set of arguments that works for all versions
+-- if that's applicable.
+-- pkg.configure      = {}
+
+-- if nothing special needs to be done for building, then this can be blank
+-- pkg.compile = {}
+
+-- if nothing special needs to be done for installing, then this can be blank
+-- pkg.install = {}
+
+return pkg

@@ -1,0 +1,35 @@
+local pkg = {name = "lua"}
+
+-- Here we can declare all the versions we plan on installing
+-- and any customizations for them.
+pkg.versions       = {
+   {name           = "5.3.5",
+    url            = "http://www.lua.org/ftp/lua-5.3.5.tar.gz",
+    md5            = "",
+    provides       = "bin/lua"}
+}
+
+-- if nothing special needs to be done for patching, then this can be blank
+-- if configured, if follows the format of the versions table
+-- pkg.patches = {}
+
+-- there is no need to worry about --prefix=
+-- that is handled by the job runner. This set should be
+-- the global set of arguments that works for all versions
+-- if that's applicable.
+pkg.configure      = {
+   command         = ""
+   arguments       = ""
+}
+
+-- if nothing special needs to be done for building, then this can be blank
+pkg.compile        = {
+   arguments       = "posix"
+}
+
+-- if nothing special needs to be done for installing, then this can be blank
+pkg.install        = {
+   arguments       = "DESTDIR="..
+}
+
+return pkg

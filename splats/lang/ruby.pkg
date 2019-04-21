@@ -1,0 +1,30 @@
+local pkg = {name = "ruby"}
+
+-- Here we can declare all the versions we plan on installing
+-- and any customizations for them.
+pkg.versions       = {
+   {name           = "2.5.5",
+    url            = "https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.5.tar.gz",
+    md5            = "",
+    provides       = "bin/ruby"}
+}
+
+-- if nothing special needs to be done for patching, then this can be blank
+-- if configured, if follows the format of the versions table
+-- pkg.patches = {}
+
+-- there is no need to worry about --prefix=
+-- that is handled by the job runner. This set should be
+-- the global set of arguments that works for all versions
+-- if that's applicable.
+pkg.configure      = {
+   arguments       = "--disable-install-doc --disable-dtrace"
+}
+
+-- if nothing special needs to be done for building, then this can be blank
+-- pkg.compile = {}
+
+-- if nothing special needs to be done for installing, then this can be blank
+-- pkg.install = {}
+
+return pkg

@@ -18,19 +18,6 @@ build_py() {
     fi
 }
 
-chpy() {
-    PYDFLT=${THWAP_HOME}/python/default
-    case "${1}" in
-        (2) PYTARG=${THWAP_HOME}/python/2   ;;
-        (3) PYTARG=${THWAP_HOME}/python/3   ;;
-        (*) PYTARG=${THWAP_HOME}/python/3   ;; # default
-    esac
-    rm -f ${PYDFLT}
-    ln -sf ${PYTARG} ${PYDFLT}
-    PYPATH=${PYDFLT}/bin
-    add2path ${PYPATH}
-}
-
 # Python 3.x setup
 pyexec=python3
 pyvers=3.7.2

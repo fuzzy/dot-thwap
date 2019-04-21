@@ -1,5 +1,6 @@
 
-vers=1.10.8
+#vers=1.10.8
+vers=1.11.6
 tball=go${vers}.src.tar.gz
 url=https://dl.google.com/go/${tball}
 
@@ -25,6 +26,8 @@ if test -z "${SKIP_PLATFORM}"; then
         fi
         cd
         rm -f ${THWAP_TEMP}/${tball}
+        export GOROOT=${THWAP_HOME}/golang/root
+        export GOPATH=${THWAP_HOME}/golang/path
         for pkg in $(cat ${THWAP_CONF}/golang-packages.sh); do
 	          executable=$(echo ${pkg}|awk -F: '{print $1}')
 	          instroot=$(echo ${pkg}|awk -F: '{print $2}')

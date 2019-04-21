@@ -26,3 +26,26 @@ thwap_exec() {
                                                    mv ${OUTPUT} ${NOUTPUT}; \
                                                    tout "See ${NOUTPUT}\n")
 }
+
+chpy() {
+    PYDFLT=${THWAP_HOME}/python/default
+    case "${1}" in
+        (2) PYTARG=${THWAP_HOME}/python/2   ;;
+        (3) PYTARG=${THWAP_HOME}/python/3   ;;
+        (*) PYTARG=${THWAP_HOME}/python/3   ;; # default
+    esac
+    rm -f ${PYDFLT}
+    ln -sf ${PYTARG} ${PYDFLT}
+    PYPATH=${PYDFLT}/bin
+    add2path ${PYPATH}
+}
+
+thwap_direnv() {
+    if test "${PWD}" != "${THWAP_LAST_DIR}"; then
+        test -f ${PWD}/.thwapenv && . ${PWD}/.thwapenv
+    fi
+    export THWAP_LAST_DIR=${PWD}
+}
+
+export THWAP_LAST_DIR=${HOME}
+export PROMPT_COMMAND=thwap_direnv
