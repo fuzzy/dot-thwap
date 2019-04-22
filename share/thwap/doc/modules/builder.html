@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>builder</strong></li>
+  <li><a href="../modules/config.html">config</a></li>
+  <li><a href="../modules/output.html">output</a></li>
+  <li><a href="../modules/utils.html">utils</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>builder</code></h1>
+<p>An Object-Oriented build engine for THWAP</p>
+<p> 04/05/2019 - Mike 'Fuzzy' Partin <fuzzy@thwap.org>
+ <li>Initial OOPization of the older proof of concept procedural code</li>
+ <li>Other thing I did</li>
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Builder:new">Builder:new (cfg)</a></td>
+	<td class="summary"><b>Builder:new(cfg)</b><br />
+ Pass in a configuration and a pacakge object, get yourself a Builder
+ object, in return.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:open">Builder:open (pkg)</a></td>
+	<td class="summary"><b>Builder:open(pkg) => bool</b><br />
+ Open a given package definition to build.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:build">Builder:build (vers)</a></td>
+	<td class="summary"><b>Builder:build(vers) => bool</b><br />
+ Build a specific version</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:version">Builder:version (vers)</a></td>
+	<td class="summary"><b>Builder:version(vers) => table</b><br />
+ This returns a given version as referenced by the name field.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:doFetch">Builder:doFetch ()</a></td>
+	<td class="summary"><b>Builder:doFetch() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:doExtract">Builder:doExtract ()</a></td>
+	<td class="summary"><b>Builder:doExtract() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:doPatch">Builder:doPatch ()</a></td>
+	<td class="summary"><b>Builder:doPatch() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:doConfigure">Builder:doConfigure ()</a></td>
+	<td class="summary"><b>Builder:doConfigure() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:doCompile">Builder:doCompile ()</a></td>
+	<td class="summary"><b>Builder:doCompile() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:doInstall">Builder:doInstall ()</a></td>
+	<td class="summary"><b>Builder:doInstall() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Builder:doCleanup">Builder:doCleanup ()</a></td>
+	<td class="summary"><b>Builder:doCleanup() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Builder:new"></a>
+    <strong>Builder:new (cfg)</strong>
+    </dt>
+    <dd>
+    <b>Builder:new(cfg)</b><br />
+ Pass in a configuration and a pacakge object, get yourself a Builder
+ object, in return.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cfg</span>
+         The configuration object.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Builder
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:open"></a>
+    <strong>Builder:open (pkg)</strong>
+    </dt>
+    <dd>
+    <b>Builder:open(pkg) => bool</b><br />
+ Open a given package definition to build.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pkg</span>
+
+ String describing the package definition filename (not pathname)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:build"></a>
+    <strong>Builder:build (vers)</strong>
+    </dt>
+    <dd>
+    <b>Builder:build(vers) => bool</b><br />
+ Build a specific version
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vers</span>
+
+ String matching the 'name' parameter of a version entry
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:version"></a>
+    <strong>Builder:version (vers)</strong>
+    </dt>
+    <dd>
+    <b>Builder:version(vers) => table</b><br />
+ This returns a given version as referenced by the name field.
+ Returns nil on failure
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">vers</span>
+
+ String describing a versions 'name' field
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table/nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:doFetch"></a>
+    <strong>Builder:doFetch ()</strong>
+    </dt>
+    <dd>
+    <b>Builder:doFetch() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:doExtract"></a>
+    <strong>Builder:doExtract ()</strong>
+    </dt>
+    <dd>
+    <b>Builder:doExtract() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:doPatch"></a>
+    <strong>Builder:doPatch ()</strong>
+    </dt>
+    <dd>
+    <b>Builder:doPatch() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:doConfigure"></a>
+    <strong>Builder:doConfigure ()</strong>
+    </dt>
+    <dd>
+    <b>Builder:doConfigure() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:doCompile"></a>
+    <strong>Builder:doCompile ()</strong>
+    </dt>
+    <dd>
+    <b>Builder:doCompile() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:doInstall"></a>
+    <strong>Builder:doInstall ()</strong>
+    </dt>
+    <dd>
+    <b>Builder:doInstall() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Builder:doCleanup"></a>
+    <strong>Builder:doCleanup ()</strong>
+    </dt>
+    <dd>
+    <b>Builder:doCleanup() => bool</b><br />
+ This operates on the property: self.package._current which should be
+ directly relatable to a version entrys name attribute.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-04-07 12:40:27 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

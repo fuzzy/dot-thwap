@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/builder.html">builder</a></li>
+  <li><strong>config</strong></li>
+  <li><a href="../modules/output.html">output</a></li>
+  <li><a href="../modules/utils.html">utils</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>config</code></h1>
+<p>Dynamic configuration module.</p>
+<p> There are no methods, no functions.
+ The config object that is returned is a table with all of the
+ configuration directives inside it. It reads in configration files
+ in the following order:
+<p> <ol><li>~/.thwap/init.d/thwap.config</li>
+ <li>~/.thwaprc</li>
+ <li>/etc/thwap/thwap.config</li></ol>
+<p> Stopping at the first result found. It then goes on to do system
+ dependent configuration. In this case we standardize on GNU utilities
+ so we specify the g* variants on the *BSD systems.
+<p> 04/05/2019 - Mike 'Fuzzy' Partin <fuzzy@thwap.org>
+ <li>Initial modularization</li>
+ <li>Documented the configuration fields a bit</li>
+</p>
+
+
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#tools">tools</a></td>
+	<td class="summary">Tools (table)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dirs">dirs</a></td>
+	<td class="summary">Directories (table)</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#osname">osname</a></td>
+	<td class="summary">Operating System Name (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#arch">arch</a></td>
+	<td class="summary">Machine Architecture (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#cpus">cpus</a></td>
+	<td class="summary">Number of available CPU cores (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tools.make">tools.make</a></td>
+	<td class="summary">Make utility (GNU Make) (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tools.sed">tools.sed</a></td>
+	<td class="summary">Sed utility (GNU Sed) (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tools.awk">tools.awk</a></td>
+	<td class="summary">Awk utility (GNU Awk) (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dirs.base">dirs.base</a></td>
+	<td class="summary">Base directory (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dirs.init">dirs.init</a></td>
+	<td class="summary">Init directory (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dirs.library">dirs.library</a></td>
+	<td class="summary">Library directory (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dirs.config">dirs.config</a></td>
+	<td class="summary">Configuration directory (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dirs.package">dirs.package</a></td>
+	<td class="summary">Package definition directory (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dirs.home">dirs.home</a></td>
+	<td class="summary">"Home" directory (install prefix) (string)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dirs.temp">dirs.temp</a></td>
+	<td class="summary">Temp directory (string)</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "tools"></a>
+    <strong>tools</strong>
+    </dt>
+    <dd>
+    Tools (table)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dirs"></a>
+    <strong>dirs</strong>
+    </dt>
+    <dd>
+    Directories (table)
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "osname"></a>
+    <strong>osname</strong>
+    </dt>
+    <dd>
+    Operating System Name (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "arch"></a>
+    <strong>arch</strong>
+    </dt>
+    <dd>
+    Machine Architecture (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "cpus"></a>
+    <strong>cpus</strong>
+    </dt>
+    <dd>
+    Number of available CPU cores (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tools.make"></a>
+    <strong>tools.make</strong>
+    </dt>
+    <dd>
+    Make utility (GNU Make) (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tools.sed"></a>
+    <strong>tools.sed</strong>
+    </dt>
+    <dd>
+    Sed utility (GNU Sed) (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tools.awk"></a>
+    <strong>tools.awk</strong>
+    </dt>
+    <dd>
+    Awk utility (GNU Awk) (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dirs.base"></a>
+    <strong>dirs.base</strong>
+    </dt>
+    <dd>
+    Base directory (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dirs.init"></a>
+    <strong>dirs.init</strong>
+    </dt>
+    <dd>
+    Init directory (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dirs.library"></a>
+    <strong>dirs.library</strong>
+    </dt>
+    <dd>
+    Library directory (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dirs.config"></a>
+    <strong>dirs.config</strong>
+    </dt>
+    <dd>
+    Configuration directory (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dirs.package"></a>
+    <strong>dirs.package</strong>
+    </dt>
+    <dd>
+    Package definition directory (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dirs.home"></a>
+    <strong>dirs.home</strong>
+    </dt>
+    <dd>
+    "Home" directory (install prefix) (string)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dirs.temp"></a>
+    <strong>dirs.temp</strong>
+    </dt>
+    <dd>
+    Temp directory (string)
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-04-07 12:40:27 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

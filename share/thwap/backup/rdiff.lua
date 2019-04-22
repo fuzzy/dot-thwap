@@ -1,0 +1,3 @@
+local rdiff = {}
+
+return rdiff

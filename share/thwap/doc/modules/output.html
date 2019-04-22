@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/builder.html">builder</a></li>
+  <li><a href="../modules/config.html">config</a></li>
+  <li><strong>output</strong></li>
+  <li><a href="../modules/utils.html">utils</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>output</code></h1>
+<p>Output functions and string type methods
+<p> 04/05/2019 - Mike 'Fuzzy' Partin <fuzzy@thwap.org>
+ <li>Initial modularization</li>
+<p> TODO:
+ Detect if the running shell is interactive or not and
+ use that to determine if output is desired.</p>
+<p>
+<p> TODO:
+ syslog style log level settings.
+</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#string:red">string:red (self)</a></td>
+	<td class="summary"><b>string:red() => string</b><br />
+ String method to colorize the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#string:green">string:green (self)</a></td>
+	<td class="summary"><b>string:green() => string</b><br />
+ String method to colorize the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#string:yellow">string:yellow (self)</a></td>
+	<td class="summary"><b>string:yellow() => string</b><br />
+ String method to colorize the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#string:blue">string:blue (self)</a></td>
+	<td class="summary"><b>string:blue() => string</b><br />
+ String method to colorize the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#string:purple">string:purple (self)</a></td>
+	<td class="summary"><b>string:purple() => string</b><br />
+ String method to colorize the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#string:cyan">string:cyan (self)</a></td>
+	<td class="summary"><b>string:cyan() => string</b><br />
+ String method to colorize the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#string:white">string:white (self)</a></td>
+	<td class="summary"><b>string:white() => string</b><br />
+ String method to colorize the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#string:black">string:black (self)</a></td>
+	<td class="summary"><b>string:black() => string</b><br />
+ String method to colorize the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#string:bold">string:bold (self)</a></td>
+	<td class="summary"><b>string:bold() => string</b><br />
+ String method to emBOLDen the text.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#status">status (str)</a></td>
+	<td class="summary"><b>status(str)</b><br />
+ Show (str) without a newline, suitable for status prompts</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#success">success ()</a></td>
+	<td class="summary"><b>success()</b><br />
+ Show a bold green 'OK'</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#failure">failure ()</a></td>
+	<td class="summary"><b>failure()</b><br />
+ Show a bold red 'ERR'</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#info">info (str)</a></td>
+	<td class="summary"><b>info(str)</b><br />
+ Show (str) prefixed by a triplet of green '>'</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dbug">dbug (str)</a></td>
+	<td class="summary"><b>dbug(str)</b><br />
+ Show (str) prefixed by a triplet of purple '>'</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#warn">warn (str)</a></td>
+	<td class="summary"><b>warn(str)</b><br />
+ Show (str) prefixed by a triplet of yellow '>'</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#err">err (str)</a></td>
+	<td class="summary"><b>err(str)</b><br />
+ Show (str) prefixed by a triplet of red '>'</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fatal">fatal (str)</a></td>
+	<td class="summary"><b>fatal(str)</b><br />
+ Show (str) prefixed by a triplet of bold red '>'
+ followed by a program exit.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "string:red"></a>
+    <strong>string:red (self)</strong>
+    </dt>
+    <dd>
+    <b>string:red() => string</b><br />
+ String method to colorize the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "string:green"></a>
+    <strong>string:green (self)</strong>
+    </dt>
+    <dd>
+    <b>string:green() => string</b><br />
+ String method to colorize the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "string:yellow"></a>
+    <strong>string:yellow (self)</strong>
+    </dt>
+    <dd>
+    <b>string:yellow() => string</b><br />
+ String method to colorize the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "string:blue"></a>
+    <strong>string:blue (self)</strong>
+    </dt>
+    <dd>
+    <b>string:blue() => string</b><br />
+ String method to colorize the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "string:purple"></a>
+    <strong>string:purple (self)</strong>
+    </dt>
+    <dd>
+    <b>string:purple() => string</b><br />
+ String method to colorize the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "string:cyan"></a>
+    <strong>string:cyan (self)</strong>
+    </dt>
+    <dd>
+    <b>string:cyan() => string</b><br />
+ String method to colorize the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "string:white"></a>
+    <strong>string:white (self)</strong>
+    </dt>
+    <dd>
+    <b>string:white() => string</b><br />
+ String method to colorize the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "string:black"></a>
+    <strong>string:black (self)</strong>
+    </dt>
+    <dd>
+    <b>string:black() => string</b><br />
+ String method to colorize the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "string:bold"></a>
+    <strong>string:bold (self)</strong>
+    </dt>
+    <dd>
+    <b>string:bold() => string</b><br />
+ String method to emBOLDen the text.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+
+ String type
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string
+ String (self) wrapped in ANSI escape sequences.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "status"></a>
+    <strong>status (str)</strong>
+    </dt>
+    <dd>
+    <b>status(str)</b><br />
+ Show (str) without a newline, suitable for status prompts
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing the text to display
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "success"></a>
+    <strong>success ()</strong>
+    </dt>
+    <dd>
+    <b>success()</b><br />
+ Show a bold green 'OK'
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "failure"></a>
+    <strong>failure ()</strong>
+    </dt>
+    <dd>
+    <b>failure()</b><br />
+ Show a bold red 'ERR'
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "info"></a>
+    <strong>info (str)</strong>
+    </dt>
+    <dd>
+    <b>info(str)</b><br />
+ Show (str) prefixed by a triplet of green '>'
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing the text to display
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dbug"></a>
+    <strong>dbug (str)</strong>
+    </dt>
+    <dd>
+    <b>dbug(str)</b><br />
+ Show (str) prefixed by a triplet of purple '>'
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing the text to display
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "warn"></a>
+    <strong>warn (str)</strong>
+    </dt>
+    <dd>
+    <b>warn(str)</b><br />
+ Show (str) prefixed by a triplet of yellow '>'
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing the text to display
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "err"></a>
+    <strong>err (str)</strong>
+    </dt>
+    <dd>
+    <b>err(str)</b><br />
+ Show (str) prefixed by a triplet of red '>'
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing the text to display
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fatal"></a>
+    <strong>fatal (str)</strong>
+    </dt>
+    <dd>
+    <b>fatal(str)</b><br />
+ Show (str) prefixed by a triplet of bold red '>'
+ followed by a program exit.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing the text to display
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-04-07 12:40:27 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

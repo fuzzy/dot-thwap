@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/builder.html">builder</a></li>
+  <li><a href="../modules/config.html">config</a></li>
+  <li><a href="../modules/output.html">output</a></li>
+  <li><strong>utils</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>utils</code></h1>
+<p>Utility functions</p>
+<p> 04/05/2019 - Mike 'Fuzzy' Partin <fuzzy@thwap.org>
+ <ol><li>Initial modularization</li></ol>
+<p> TODO
+ This needs to log the command, and all the output
+ to disk, and display a message to the user stating
+ where to find said file.</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#isDir">isDir (str)</a></td>
+	<td class="summary"><b>isDir(str) => bool</b><br />
+ Quick utility function to check if a directory exists.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#isFile">isFile (str)</a></td>
+	<td class="summary"><b>isFile(str) => bool</b><br />
+ Quick utility function to check if a file exists.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#isLink">isLink (str)</a></td>
+	<td class="summary"><b>isLink(str) => bool</b><br />
+ Quick utility function to check if a link exists.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mkDir">mkDir (str)</a></td>
+	<td class="summary"><b>mkDir(str)</b><br />
+ Utility function to create a directory (like mkdir [dir])</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mkDirs">mkDirs (str)</a></td>
+	<td class="summary"><b>mkDirs(str)</b><br />
+ Utility function to create a directory tree (like mkdir -p [dir])</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#which">which (str)</a></td>
+	<td class="summary"><b>which(str) => str</b><br />
+ Utility function that operates like the command 'which'
+ returns a string on success, or nil on failure.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#split">split (str, sep)</a></td>
+	<td class="summary"><b>split(str, sep) => table</b><br />
+ Utility to split strings given a seperator (space by default).</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#run">run (cmd, msg, cwd)</a></td>
+	<td class="summary"><b>run(cmd, msg, cwd) => table{"success": bool, "output": table}</b><br />
+ Utility to run a command and show status, as well as log output.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "isDir"></a>
+    <strong>isDir (str)</strong>
+    </dt>
+    <dd>
+    <b>isDir(str) => bool</b><br />
+ Quick utility function to check if a directory exists.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing pathname + dirname
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "isFile"></a>
+    <strong>isFile (str)</strong>
+    </dt>
+    <dd>
+    <b>isFile(str) => bool</b><br />
+ Quick utility function to check if a file exists.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing pathname + filename
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "isLink"></a>
+    <strong>isLink (str)</strong>
+    </dt>
+    <dd>
+    <b>isLink(str) => bool</b><br />
+ Quick utility function to check if a link exists.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing pathname + linkname
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        bool
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "mkDir"></a>
+    <strong>mkDir (str)</strong>
+    </dt>
+    <dd>
+    <b>mkDir(str)</b><br />
+ Utility function to create a directory (like mkdir [dir])
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing pathname + dirname
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "mkDirs"></a>
+    <strong>mkDirs (str)</strong>
+    </dt>
+    <dd>
+    <b>mkDirs(str)</b><br />
+ Utility function to create a directory tree (like mkdir -p [dir])
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing pathname + dirname
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "which"></a>
+    <strong>which (str)</strong>
+    </dt>
+    <dd>
+    <b>which(str) => str</b><br />
+ Utility function that operates like the command 'which'
+ returns a string on success, or nil on failure.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String containing the filename to search for in $PATH
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        str
+ String containing the pathname + filename where found in the $PATH, or nil if not found.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "split"></a>
+    <strong>split (str, sep)</strong>
+    </dt>
+    <dd>
+    <b>split(str, sep) => table</b><br />
+ Utility to split strings given a seperator (space by default).
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">str</span>
+
+ String to be split
+        </li>
+        <li><span class="parameter">sep</span>
+
+ String containing the seperator to split by ('%s' by default)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table
+ An array of elements as created by splitting str
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "run"></a>
+    <strong>run (cmd, msg, cwd)</strong>
+    </dt>
+    <dd>
+    <b>run(cmd, msg, cwd) => table{"success": bool, "output": table}</b><br />
+ Utility to run a command and show status, as well as log output.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cmd</span>
+
+ String containing the command to run
+        </li>
+        <li><span class="parameter">msg</span>
+
+ String containing the status message to display
+        </li>
+        <li><span class="parameter">cwd</span>
+
+ String containing the directory to execute the command from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table
+ Table with the keys {success = bool, output = {}}
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-04-07 12:40:27 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

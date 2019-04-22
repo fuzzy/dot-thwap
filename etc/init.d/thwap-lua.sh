@@ -17,7 +17,7 @@ esac
 INST_ROOT=${THWAP_HOME}/lua/${vers}
 
 if test ! -x ${INST_ROOT}/bin/luac; then
-    tout "\033[32m>>>\033[0m PKG: \033[36mLua ${vers}\033[0m\n"
+    tout "\033[1;32m>>>\033[0m PKG: Lua ${vers}\n"
     cd ${THWAP_TEMP} ; thwap_exec "Fetching" "$(which wget) -qc ${url}"
     thwap_exec "Extracting" "tar -zxf ${tball}"
     cd ${THWAP_TEMP}/lua-${vers}
@@ -33,7 +33,7 @@ fi
 add2path ${THWAP_HOME}/lua/${vers}/bin
 
 if test ! -x ${THWAP_HOME}/lua/${vers}/bin/luarocks; then
-    tout "\033[32m>>>\033[0m PKG: \033[36mLuaRocks ${lrvers}\033[0m\n"
+    tout "\033[1;32m>>>\033[0m PKG: LuaRocks ${lrvers}\n"
     cd ${THWAP_TEMP} ; thwap_exec "Fetching" "$(which wget) -qc ${lrurl}"
     thwap_exec "Extracting" "tar -zxf ${lrtball}"
     cd ${THWAP_TEMP}/luarocks-${lrvers}
