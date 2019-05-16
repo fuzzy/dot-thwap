@@ -1,6 +1,6 @@
 
-vers=5.3.5
-#vers=5.2.4
+#vers=5.3.5
+vers=5.2.4
 tball=lua-${vers}.tar.gz
 url=http://www.lua.org/ftp/${tball}
 
