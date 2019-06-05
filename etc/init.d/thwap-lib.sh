@@ -21,7 +21,7 @@ thwap_exec() {
     S_FAIL="\033[1;31mERR\033[0m"
     OUTPUT="${THWAP_TEMP}/thwap_exec.log"
     tout "\033[1;32m>>>\033[0m ${1}: "
-    ${2} >${OUTPUT} 2>&1 && tout "${S_PASS}\n" || (tout "${S_FAIL}\n"; \
+    /bin/sh -c "${2} >${OUTPUT} 2>&1" && tout "${S_PASS}\n" || (tout "${S_FAIL}\n"; \
                                                    NOUTPUT=${THWAP_TEMP}-$(openssl rand -hex 8).log; \
                                                    mv ${OUTPUT} ${NOUTPUT}; \
                                                    tout "See ${NOUTPUT}\n")
@@ -49,3 +49,10 @@ thwap_direnv() {
 
 export THWAP_LAST_DIR=${HOME}
 export PROMPT_COMMAND=thwap_direnv
+
+test -f ${HOME}/.sshenv && source ${HOME}/.sshenv
+if test -z "${SSH_AGENT_PID}" || test -z "$(ps aux|grep ${SSH_AGENT_PID}|grep -v grep)"; then
+    eval $(ssh-agent -s|tee ${HOME}/.sshenv)
+    ssh-add
+fi
+
