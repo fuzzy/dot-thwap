@@ -18,7 +18,7 @@ pkg.versions       = {
 -- the global set of arguments that works for all versions
 -- if that's applicable.
 pkg.configure      = {
-   arguments       = "--with-modules --with-x-toolkit=lucid --with-threads"
+   arguments       = "--with-modules --with-x-toolkit=gtk2 --with-threads"
 }
 
 -- if nothing special needs to be done for building, then this can be blank
