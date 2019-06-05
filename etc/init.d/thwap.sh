@@ -11,15 +11,15 @@ THWAP_PKGD=${THWAP_BASE}/splats
 THWAP_EXEC=${THWAP_BASE}/bin
 THWAP_SHARE=${THWAP_BASE}/share
 
-. ${THWAP_INIT}/thwap-alias.sh
-. ${THWAP_INIT}/thwap-lib.sh
-. ${THWAP_INIT}/thwap-platform.sh
+source ${THWAP_INIT}/thwap-alias.sh
+source ${THWAP_INIT}/thwap-lib.sh
+source ${THWAP_INIT}/thwap-platform.sh
 
 for i in ${THWAP_HOME} ${THWAP_TEMP}; do
     test ! -d ${i} && mkdir -p ${i}
 done
 
-test -f ${THWAP_INIT}/thwap-lua.sh && . ${THWAP_INIT}/thwap-lua.sh
+test -f ${THWAP_INIT}/thwap-lua.sh && source ${THWAP_INIT}/thwap-lua.sh
 case "$-" in
     (*i*)
         for dir in $(${THWAP_EXEC}/thwap.lua); do
